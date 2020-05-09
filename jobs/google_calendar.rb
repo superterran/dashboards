@@ -17,7 +17,7 @@ SCHEDULER.every '5m', :first_in => 4 do |job|
       end: event.dtend,
       summary: event.summary
     }
-  end.select { |event| event[:start] > DateTime.now }
+  end.select { |event| event[:start] != DateTime.now }
 
   events = events.sort { |a, b| a[:start] <=> b[:start] }
 

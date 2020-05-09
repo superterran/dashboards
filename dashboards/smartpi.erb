@@ -1,6 +1,10 @@
 <% content_for :title do %>super sweet dashboard<% end %>
 <div class="gridster">
   <ul>
+    <li data-row="1" data-col="2" data-sizex="2" data-sizey="1">
+      <div data-id="google_calendar" data-pre="0" data-view="GoogleCalendar"></div>
+    </li>
+
     <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
       <div data-id="welcome" data-view="Text" data-title="Hello" data-text="This is your shiny new dashboard." data-moreinfo="Protip: You can drag the widgets around!"></div>
     </li>
@@ -15,17 +19,6 @@
 
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
       <div data-id="valuation" data-view="Number" data-title="Current Valuation" data-moreinfo="In billions" data-prefix="$"></div>
-    </li>
-
-    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
-      <div data-id="convergence" data-view="Graph" data-title="Convergence" style="background-color:#ff9618"></div>
-    </li>
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="google_calendar" data-pre="0" data-view="Calendar"></div>
-    </li>
-  
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="google_calendar" data-pre="1"  data-view="Calendar"></div>
     </li>
 
   </ul>
