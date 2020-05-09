@@ -1,27 +1,59 @@
+# encoding: UTF-8
+
+require 'google/api_client'
 require 'date'
-require 'icalendar'
+require 'time'
+require 'digest/md5'
+require 'active_support'
+require 'active_support/all'
+require 'json'
 require 'dotenv'
 Dotenv.load
 
-ical_url = ENV['ICALURL']
-uri = URI ical_url
+# Update these to match your own apps credentials
+service_account_email = ENV['service_account_email']
+key_file =  ENV['key_file']
+key_secret = ENV['key_secret']
+calendarID = ENV['calendarID']
 
-SCHEDULER.every '5m', :first_in => 4 do |job|
-  result = Net::HTTP.get uri
-  calendars = Icalendar::Calendar.parse(result)
-  calendar = calendars.first
+# Get the Google API client
+client = Google::APIClient.new(:application_name => 'Dashing Calendar Widget',
+  :application_version => '0.0.1',
+  user_agent: 'Foo/1.0 google-api-ruby-client/0.8.6 Linux/4.15.0-65-generic (gzip)')
 
-  events = calendar.events.map do |event|
-    {
-      start: event.dtstart,
-      end: event.dtend,
-      summary: event.summary
-    }
-  end.select { |event| event[:start].strftime("%Y-%m-%d %H:%M") > DateTime.now.strftime("%Y-%m-%d %H:%M") }
+# Load your credentials for the service account
+if not key_file.nil? and File.exists? key_file
+  key = Google::APIClient::KeyUtils.load_from_pkcs12(key_file, key_secret)
+else
+  key = OpenSSL::PKey::RSA.new ENV['GOOGLE_SERVICE_PK'], key_secret
+end
 
-  events = events.sort { |a, b| a[:start] <=> b[:start] }
+client.authorization = Signet::OAuth2::Client.new(
+  :token_credential_uri => 'https://accounts.google.com/o/oauth2/token',
+  :audience => 'https://accounts.google.com/o/oauth2/token',
+  :scope => 'https://www.googleapis.com/auth/calendar.readonly',
+  :issuer => service_account_email,
+  :signing_key => key)
 
-  events = events[0..5]
+# Start the scheduler
+SCHEDULER.every '15s', :first_in => 4 do |job|
 
-  send_event('google_calendar', { events: events })
+  # Request a token for our service account
+  client.authorization.fetch_access_token!
+
+  # Get the calendar API
+  service = client.discovered_api('calendar','v3')
+
+  # Start and end dates
+  now = DateTime.now
+
+  result = client.execute(:api_method => service.events.list,
+                          :parameters => {'calendarId' => calendarID,
+                                          'timeMin' => now.rfc3339,
+                                          'orderBy' => 'startTime',
+                                          'singleEvents' => 'true',
+                                          'maxResults' => 6})  # How many calendar items to get
+
+  send_event('google_calendar', { events: result.data })
+
 end
