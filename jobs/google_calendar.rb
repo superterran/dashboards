@@ -1,11 +1,14 @@
+require 'date'
 require 'icalendar'
+require 'dotenv'
+Dotenv.load
 
-ical_url = 'https://www.google.com/calendar/ical/xxxxxxxx%40group.calendar.google.com/private-xxxxx/basic.ics'
+ical_url = ENV['ICALURL']
 uri = URI ical_url
 
-SCHEDULER.every '15s', :first_in => 4 do |job|
+SCHEDULER.every '5m', :first_in => 4 do |job|
   result = Net::HTTP.get uri
-  calendars = Icalendar.parse(result)
+  calendars = Icalendar::Calendar.parse(result)
   calendar = calendars.first
 
   events = calendar.events.map do |event|

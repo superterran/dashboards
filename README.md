@@ -13,3 +13,5 @@ $ cd /to/this/repo
 $ bundle
 $ smashing start
 ```
+
+http://localhost:3030/smartpi

@@ -1,9 +1,15 @@
 ---
-buzzwords: "data: {\"items\":[{\"label\":\"Leverage\",\"value\":26},{\"label\":\"Enterprise\",\"value\":14},{\"label\":\"Turn-key\",\"value\":14},{\"label\":\"Web
-  2.0\",\"value\":17},{\"label\":\"Streamlininess\",\"value\":10},{\"label\":\"Paradigm
-  shift\",\"value\":10},{\"label\":\"Pivoting\",\"value\":11},{\"label\":\"Exit strategy\",\"value\":6},{\"label\":\"Synergy\",\"value\":5}],\"id\":\"buzzwords\",\"updatedAt\":1588995992403}\n\n"
-convergence: "data: {\"points\":[{\"x\":384,\"y\":19},{\"x\":385,\"y\":38},{\"x\":386,\"y\":47},{\"x\":387,\"y\":32},{\"x\":388,\"y\":13},{\"x\":389,\"y\":17},{\"x\":390,\"y\":49},{\"x\":391,\"y\":9},{\"x\":392,\"y\":21},{\"x\":393,\"y\":32}],\"id\":\"convergence\",\"updatedAt\":1588995992403}\n\n"
-valuation: "data: {\"current\":72,\"last\":82,\"id\":\"valuation\",\"updatedAt\":1588995992403}\n\n"
-karma: "data: {\"current\":38996,\"last\":44718,\"id\":\"karma\",\"updatedAt\":1588995992403}\n\n"
-synergy: "data: {\"value\":92,\"id\":\"synergy\",\"updatedAt\":1588995992403}\n\n"
+buzzwords: "data: {\"items\":[{\"label\":\"Web 2.0\",\"value\":12},{\"label\":\"Synergy\",\"value\":10},{\"label\":\"Enterprise\",\"value\":15},{\"label\":\"Turn-key\",\"value\":13},{\"label\":\"Leverage\",\"value\":15},{\"label\":\"Paradigm
+  shift\",\"value\":14},{\"label\":\"Exit strategy\",\"value\":10},{\"label\":\"Streamlininess\",\"value\":11},{\"label\":\"Pivoting\",\"value\":10}],\"id\":\"buzzwords\",\"updatedAt\":1588998258823}\n\n"
+convergence: "data: {\"points\":[{\"x\":111,\"y\":11},{\"x\":112,\"y\":13},{\"x\":113,\"y\":15},{\"x\":114,\"y\":39},{\"x\":115,\"y\":16},{\"x\":116,\"y\":14},{\"x\":117,\"y\":15},{\"x\":118,\"y\":40},{\"x\":119,\"y\":19},{\"x\":120,\"y\":39}],\"id\":\"convergence\",\"updatedAt\":1588998258823}\n\n"
+valuation: "data: {\"current\":76,\"last\":40,\"id\":\"valuation\",\"updatedAt\":1588998258823}\n\n"
+karma: "data: {\"current\":150939,\"last\":175969,\"id\":\"karma\",\"updatedAt\":1588998258823}\n\n"
+synergy: "data: {\"value\":12,\"id\":\"synergy\",\"updatedAt\":1588998258823}\n\n"
 welcome: "data: {\"text\":\"Hey! Look what I can do!\",\"id\":\"welcome\",\"updatedAt\":1588995277275}\n\n"
+google_calendar: "data: {\"events\":[{\"start\":\"2011-11-29T20:30:00+00:00\",\"end\":\"2011-11-29T21:30:00+00:00\",\"summary\":\"Review
+  Blue Acorn Server Setup, issues, & requirements\"},{\"start\":\"2011-12-02T15:00:00+00:00\",\"end\":\"2011-12-02T15:30:00+00:00\",\"summary\":\"Team
+  BIN Walk Through\"},{\"start\":\"2011-12-06T15:30:00+00:00\",\"end\":\"2011-12-06T16:00:00+00:00\",\"summary\":\"Employee
+  Resources Folder\"},{\"start\":\"2011-12-07 10:15:00 -0500\",\"end\":\"2011-12-07
+  10:30:00 -0500\",\"summary\":\"BIN -  Weekly Team De-Brief\"},{\"start\":\"2011-12-08T15:30:00+00:00\",\"end\":\"2011-12-08T16:00:00+00:00\",\"summary\":\"New
+  Hire Training\"},{\"start\":\"2011-12-16T20:00:00+00:00\",\"end\":\"2011-12-16T21:00:00+00:00\",\"summary\":\"WEEKLY
+  DJ SESSION BY DJ SWEET LEMONADE STRIKES BACK\"}],\"id\":\"google_calendar\",\"updatedAt\":1588997710038}\n\n"

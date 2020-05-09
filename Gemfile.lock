@@ -11,8 +11,12 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.6)
     daemons (1.3.1)
+    date (3.0.0)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
+    dotenv (2.0.1)
+    dotenv-rails (2.0.1)
+      dotenv (= 2.0.1)
     equalizer (0.0.11)
     et-orbi (1.2.4)
       tzinfo
@@ -107,6 +111,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  date
+  dotenv-rails
   icalendar
   smashing
   twitter (>= 5.9.0)

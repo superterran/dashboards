@@ -4,7 +4,7 @@
 
 #= require_directory .
 #= require_tree ../../widgets
-#= require moment.js`
+#= require moment.js
 
 console.log("Yeah! The dashboard has started!")
 
