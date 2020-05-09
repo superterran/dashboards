@@ -33,6 +33,9 @@ GEM
     http-parser (1.2.1)
       ffi-compiler (>= 1.0, < 2.0)
     http_parser.rb (0.6.0)
+    icalendar (2.6.1)
+      ice_cube (~> 0.16)
+    ice_cube (0.16.3)
     memoizable (0.4.2)
       thread_safe (~> 0.3, >= 0.3.1)
     multi_json (1.14.1)
@@ -104,6 +107,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  icalendar
   smashing
   twitter (>= 5.9.0)
 
