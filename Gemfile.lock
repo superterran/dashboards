@@ -192,6 +192,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activesupport
   date
   dotenv-rails
   google-api-client (< 0.9)

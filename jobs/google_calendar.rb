@@ -36,7 +36,7 @@ client.authorization = Signet::OAuth2::Client.new(
   :signing_key => key)
 
 # Start the scheduler
-SCHEDULER.every '15m', :first_in => 4 do |job|
+SCHEDULER.every '15s', :first_in => 4 do |job|
 
   # Request a token for our service account
   client.authorization.fetch_access_token!
@@ -48,11 +48,12 @@ SCHEDULER.every '15m', :first_in => 4 do |job|
   now = DateTime.now
 
   result = client.execute(:api_method => service.events.list,
-                          :parameters => {'calendarId' => calendarID,
+                          :parameters => { 'calendarId' => calendarID,
                                           'timeMin' => now.rfc3339,
                                           'orderBy' => 'startTime',
                                           'singleEvents' => 'true',
-                                          'maxResults' => 6})  # How many calendar items to get
+                                          'maxResults' => 5
+                                        })  # How many calendar items to get
 
   send_event('google_calendar', { events: result.data })
 

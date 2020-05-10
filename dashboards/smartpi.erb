@@ -16,8 +16,14 @@
 $(function() {
   // These settings override the defaults set in application.coffee. You can do this on a per dashboard basis.
 
-  Dashing.widget_base_dimensions = [250, 250]
+  Dashing.widget_base_dimensions = [250, 200]
   Dashing.widget_margins = [5, 5]
   Dashing.numColumns = 3
   });
+
+  // reload for dev mode
+
+  setTimeout(function(){
+    window.location.reload(1);
+  }, 5000);
 </script>
